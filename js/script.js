@@ -54,11 +54,11 @@ const EVENTS = [
         caption: 'Uma história construída com carinho e amor.'
     },
     {
-        id: 8, slug: 'bodas-33-anos',
-        title: 'Bodas · 33 anos de amor',
+        id: 8, slug: 'bodas-perfeicao',
+        title: 'Bodas · Quando tudo se encaixa',
         category: 'boda', badge: 'Bodas',
         count: 7,
-        caption: '33 anos de amor merecem uma celebração inesquecível.'
+        caption: 'Quando tudo se encaixa, o resultado é esse: perfeição 💫'
     }
 ];
 
@@ -103,6 +103,18 @@ if (burger && nav) {
         nav.classList.remove('open');
     }));
 }
+
+/* ---------- Back to top ---------- */
+(function backToTop() {
+    const btn = document.querySelector('.back-top');
+    if (!btn) return;
+    const toggle = () => btn.classList.toggle('show', window.scrollY > 320);
+    window.addEventListener('scroll', toggle, { passive: true });
+    btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    toggle();
+})();
 
 /* ---------- Hero slideshow ---------- */
 (function heroSlideshow() {
