@@ -1,0 +1,183 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+    color: #222;
+}
+
+/* HEADER TRANSPARENTE */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.4s;
+    z-index: 1000;
+}
+
+header.scrolled {
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+}
+
+/* LOGO ASSINATURA */
+.logo {
+    font-family: 'Great Vibes', cursive;
+    font-size: 36px;
+    color: white;
+}
+
+/* MENU */
+nav a {
+    margin-left: 25px;
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+/* LINHA ANIMADA */
+nav a::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* HERO COM IMAGEM */
+.hero {
+    height: 100vh;
+    background: url('../assets/evento1/1.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+/* OVERLAY ESCURO */
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+/* TEXTO HERO */
+.hero h2 {
+    position: relative;
+    font-size: 48px;
+    max-width: 700px;
+    animation: fadeUp 1.5s ease;
+}
+
+/* GALERIA */
+.galeria {
+    padding: 100px 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap: 25px;
+}
+
+/* EVENTO */
+.evento {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: 0.4s;
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+/* ANIMAÇÃO AO APARECER */
+.evento.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* HOVER LUXO */
+.evento:hover {
+    transform: scale(1.03);
+}
+
+/* IMG */
+.evento img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/* TEXTO */
+.evento p {
+    padding: 15px;
+}
+
+/* LIGHTBOX */
+.lightbox {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+/* BOTÃO WHATSAPP */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25d366;
+    color: white;
+    padding: 15px 18px;
+    border-radius: 50%;
+    font-size: 22px;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* CONTATO */
+.contato {
+    padding: 120px 20px;
+    text-align: center;
+}
+
+/* ANIMAÇÃO */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
